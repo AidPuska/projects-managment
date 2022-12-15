@@ -1,13 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Poppins
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  body {
+    @apply m-0;
+    @apply bg-slate-100
+  }
+
+  ul,
+  li,
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply m-0;
+    @apply p-0;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  label {
+    @apply block;
+    @apply my-6;
+    @apply mx-auto
+  }
+
+  label span {
+    @apply block;
+    @apply mb-1.5
+  }
+
+  input,
+  textarea {
+    @apply py-2;
+    @apply px-1.5;
+    @apply text-gray-600;
+    @apply w-full;
+    @apply box-border;
+    @apply border border-gray-400 rounded;
+  }
+
+  textarea {
+    @apply min-h-[160px]
+  }
+}
+
+@layer components {
+  .page-title {
+    font-size: 1em;
+    color: #444;
+    display: inline-block;
+  }
+
+  .btn {
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #8d69f1;
+    cursor: pointer;
+    font-size: 1em;
+    border: 1px solid #8d69f1;
+  }
+
+  .btn:hover {
+    color: #fff;
+    background-color: #8d69f1;
+  }
+
+  .error {
+    color: red;
+    background: pink;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 10px 0;
+  }
+
+  .inherit {
+    width: inherit;
+  }
+
+  .gridCol {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
